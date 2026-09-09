@@ -7,6 +7,7 @@ It is important to clarify that the **Pipeline Register is neither a true AXI Ma
 |    AXI MASTER     |          |   PIPELINE REGISTER   |          |     AXI SLAVE     |
 | (True Originator) |=========>|    (Bridge Stage)     |=========>| (True Recipient)  |
 +-------------------+          +-----------------------+          +-------------------+
+---
 
 #### How Handshaking Works Inside the Register
 
