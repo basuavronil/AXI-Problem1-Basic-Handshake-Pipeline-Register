@@ -1,9 +1,5 @@
 ### Option 2: Enhanced Monospace ASCII Block
 
-If you prefer the classic terminal/ASCII look inside a code box, copy this block:
-
-```markdown
-```text
 +-----------------------+          +-----------------------------------+          +-----------------------+
 |      AXI MASTER       |          |         PIPELINE REGISTER         |          |       AXI SLAVE       |
 |  (Source / Producer)  |          |          (In the Middle)          |          |   (Sink / Consumer)   |
