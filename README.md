@@ -1,3 +1,13 @@
+### Architectural Role: Middleman Pipeline Stage
+
+It is important to clarify that the **Pipeline Register is neither a true AXI Master nor a true AXI Slave**. Instead, it acts as an in-line bridge (or "Slice") positioned directly between them.
+
+```text
++-------------------+          +-----------------------+          +-------------------+
+|    AXI MASTER     |          |   PIPELINE REGISTER   |          |     AXI SLAVE     |
+| (True Originator) |=========>|    (Bridge Stage)     |=========>| (True Recipient)  |
++-------------------+          +-----------------------+          +-------------------+
+
 #### How Handshaking Works Inside the Register
 
 The internal storage updates using a simple, two-rule check on every rising clock edge based on the state of the Master signals (named as Slave signals on our input port) and Slave signals (named as Master signals on our output port):
