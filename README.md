@@ -33,6 +33,8 @@ if (s_ready) begin
         data_reg <= s_data;
     end
 end
+```
+---
 
 ### Interface Naming vs. Signal Behavior
 
