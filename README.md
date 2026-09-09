@@ -1,5 +1,5 @@
 ### Option 2: Enhanced Monospace ASCII Block
-
+```markdown
 +-----------------------+          +-----------------------------------+          +-----------------------+
 |      AXI MASTER       |          |         PIPELINE REGISTER         |          |       AXI SLAVE       |
 |  (Source / Producer)  |          |          (In the Middle)          |          |   (Sink / Consumer)   |
