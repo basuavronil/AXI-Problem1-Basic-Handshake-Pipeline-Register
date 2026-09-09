@@ -1,19 +1,3 @@
-### Interface Naming vs. Signal Behavior
-
-Although port names appear inverted across the pipeline register, the **underlying signal behavior and data flow direction remain entirely unchanged**.
-
-```text
-+-----------------------+          +-----------------------------------+          +-----------------------+
-|      AXI MASTER       |          |         PIPELINE REGISTER         |          |       AXI SLAVE       |
-|  (Source / Producer)  |          |          (In the Middle)          |          |   (Sink / Consumer)   |
-|                       |          |                                   |          |                       |
-|   [ Outputs Data ]    |--s_data->| [  data_reg  ] --------- m_data ->|--s_data->|   [ Processes Data ]  |
-|   [ Outputs Valid ]   |--s_valid>| [  valid_reg ] --------- m_valid->|--s_valid>|   [ Receives Valid ]  |
-|   [ Reads Ready ]     |<-s_ready-| <----------------------- m_ready--|<-s_ready-|   [ Outputs Ready ]   |
-|                       |          | s_ready = m_ready || !valid_reg   |          |                       |
-+-----------------------+          +-----------------------------------+          +-----------------------+
-
-
 #### How Handshaking Works Inside the Register
 
 The internal storage updates using a simple, two-rule check on every rising clock edge based on the state of the Master signals (named as Slave signals on our input port) and Slave signals (named as Master signals on our output port):
@@ -37,3 +21,20 @@ if (s_ready) begin
         data_reg <= s_data;
     end
 end
+
+### Interface Naming vs. Signal Behavior
+
+Although port names appear inverted across the pipeline register, the **underlying signal behavior and data flow direction remain entirely unchanged**.
+
+```text
++-----------------------+          +-----------------------------------+          +-----------------------+
+|      AXI MASTER       |          |         PIPELINE REGISTER         |          |       AXI SLAVE       |
+|  (Source / Producer)  |          |          (In the Middle)          |          |   (Sink / Consumer)   |
+|                       |          |                                   |          |                       |
+|   [ Outputs Data ]    |--s_data->| [  data_reg  ] --------- m_data ->|--s_data->|   [ Processes Data ]  |
+|   [ Outputs Valid ]   |--s_valid>| [  valid_reg ] --------- m_valid->|--s_valid>|   [ Receives Valid ]  |
+|   [ Reads Ready ]     |<-s_ready-| <----------------------- m_ready--|<-s_ready-|   [ Outputs Ready ]   |
+|                       |          | s_ready = m_ready || !valid_reg   |          |                       |
++-----------------------+          +-----------------------------------+          +-----------------------+
+
+
