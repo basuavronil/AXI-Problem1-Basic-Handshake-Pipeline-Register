@@ -9,3 +9,7 @@
 |   [ Reads Ready ]     |<-s_ready-| <------------ m_ready-------------|<-s_ready-|   [ Outputs Ready ]   |
 |                       |          | s_ready = m_ready || !valid_reg   |          |                       |
 +-----------------------+          +-----------------------------------+          +-----------------------+
+
+### Interface Naming vs. Signal Behavior
+
+Although port names appear inverted across the pipeline register, the **underlying signal behavior and data flow direction remain entirely unchanged**
