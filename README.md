@@ -1,4 +1,4 @@
-### Option 2: Enhanced Monospace ASCII Block
+### Pipeline Register Architecture
 ```markdown
 +-----------------------+          +-----------------------------------+          +-----------------------+
 |      AXI MASTER       |          |         PIPELINE REGISTER         |          |       AXI SLAVE       |
